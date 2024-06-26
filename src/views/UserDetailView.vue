@@ -85,11 +85,13 @@ export default {
         this.setSelectedUser(userId);
         this.fetchPosts(userId)
         this.fetchAlbums(userId)
+        this.fetchTodos(userId)
     },
     methods: {
         ...mapActions('users', ['setSelectedUser']),
         ...mapActions('posts', ['fetchPosts']),
         ...mapActions('albums', ['fetchAlbums']),
+        ...mapActions('todos', ['fetchTodos']),
         toggleSidebar() {
             this.drawer = !this.drawer;
         }

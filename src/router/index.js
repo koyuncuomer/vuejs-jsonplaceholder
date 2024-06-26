@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import UserDetailView from "../views/UserDetailView.vue";
 import PostsView from "../views/PostsView.vue";
 import AlbumsView from "../views/AlbumsView.vue";
+import TodosView from "../views/TodosView.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
             path: "/albums",
             name: "albums",
             component: AlbumsView,
+        },
+        {
+            path: "/todos",
+            name: "todos",
+            component: TodosView,
         },
     ],
 });
