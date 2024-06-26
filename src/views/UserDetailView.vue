@@ -83,9 +83,11 @@ export default {
     created() {
         const userId = this.$route.params.id;
         this.setSelectedUser(userId);
+        this.fetchPosts(userId)
     },
     methods: {
         ...mapActions('users', ['setSelectedUser']),
+        ...mapActions('posts', ['fetchPosts']),
         toggleSidebar() {
             this.drawer = !this.drawer;
         }
