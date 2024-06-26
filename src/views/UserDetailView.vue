@@ -83,7 +83,7 @@ export default {
     created() {
         const userId = this.$route.params.id;
         this.setSelectedUser(userId);
-        this.fetchPosts(userId)
+        this.fetchPosts(userId).then(() => this.fetchComments())
         this.fetchAlbums(userId)
         this.fetchTodos(userId)
     },
@@ -92,6 +92,7 @@ export default {
         ...mapActions('posts', ['fetchPosts']),
         ...mapActions('albums', ['fetchAlbums']),
         ...mapActions('todos', ['fetchTodos']),
+        ...mapActions('comments', ['fetchComments']),
         toggleSidebar() {
             this.drawer = !this.drawer;
         }

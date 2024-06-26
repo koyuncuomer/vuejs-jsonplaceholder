@@ -4,6 +4,7 @@ import UserDetailView from "../views/UserDetailView.vue";
 import PostsView from "../views/PostsView.vue";
 import AlbumsView from "../views/AlbumsView.vue";
 import TodosView from "../views/TodosView.vue";
+import CommentsView from "../views/CommentsView.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -33,6 +34,11 @@ const router = createRouter({
             name: "todos",
             component: TodosView,
         },
+        {
+            path: "/comments",
+            name: "comments",
+            component: CommentsView,
+        }
     ],
 });
 
