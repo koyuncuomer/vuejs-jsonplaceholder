@@ -23,6 +23,7 @@ export default {
         return {
             items: [
                 { title: 'Posts', icon: 'mdi-post', route: '/posts' },
+                { title: 'Albums', icon: 'mdi-image-album', route: '/albums' },
                 { title: 'Comments', icon: 'mdi-comment', route: '/comments' },
             ]
         };

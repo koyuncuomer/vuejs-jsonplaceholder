@@ -9,16 +9,24 @@
         <!-- Content -->
         <v-main>
             <v-container>
-                <h1>{{user.name}}'s Posts</h1>
-                <v-row v-if="loading"><v-col><p>Loading...</p></v-col></v-row>
-                <v-row v-else>
-                    <v-col v-for="post in posts" :key="post.id" cols="12" sm="4" md="3">
-                        <v-card>
-                            <v-card-title>{{ post.title }}</v-card-title>
-                            <v-card-text>{{ post.body }}</v-card-text>
-                        </v-card>
-                    </v-col>
-                </v-row>
+                <h1>{{ user.name }}'s Albums</h1>
+                <p v-if="loading">Loading...</p>
+
+                <v-table v-else>
+                    <thead>
+                        <tr>
+                            <th class="text-left">
+                                <b>Title</b>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="item in albums" :key="item.id">
+                            <td>{{ item.title }}</td>
+                        </tr>
+                    </tbody>
+                </v-table>
+
             </v-container>
         </v-main>
     </v-app>
@@ -29,7 +37,7 @@ import { mapGetters } from 'vuex';
 import NavBar from '@/components/NavBar.vue';
 import SideBar from '@/components/SideBar.vue';
 export default {
-    name: 'PostsView',
+    name: 'AlbumsView',
     data() {
         return {
             drawer: true,
@@ -40,10 +48,10 @@ export default {
         SideBar
     },
     computed: {
-        ...mapGetters('posts', ['getAllPostsByUser', 'getLoading']),
+        ...mapGetters('albums', ['getAllAlbumsByUser', 'getLoading']),
         ...mapGetters('users', ['getSelectedUser']),
-        posts() {
-            return this.getAllPostsByUser;
+        albums() {
+            return this.getAllAlbumsByUser;
         },
         loading() {
             return this.getLoading;

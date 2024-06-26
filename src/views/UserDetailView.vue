@@ -84,10 +84,12 @@ export default {
         const userId = this.$route.params.id;
         this.setSelectedUser(userId);
         this.fetchPosts(userId)
+        this.fetchAlbums(userId)
     },
     methods: {
         ...mapActions('users', ['setSelectedUser']),
         ...mapActions('posts', ['fetchPosts']),
+        ...mapActions('albums', ['fetchAlbums']),
         toggleSidebar() {
             this.drawer = !this.drawer;
         }
