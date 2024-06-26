@@ -4,6 +4,7 @@ import posts from "./modules/posts";
 import albums from "./modules/albums";
 import todos from "./modules/todos";
 import comments from "./modules/comments";
+import photos from "./modules/photos";
 
 const store = createStore({
     modules: {
@@ -11,7 +12,8 @@ const store = createStore({
         posts,
         albums,
         todos,
-        comments
+        comments,
+        photos
     },
 });
 

@@ -23,9 +23,10 @@ export default {
         return {
             items: [
                 { title: 'Posts', icon: 'mdi-post', route: '/posts' },
-                { title: 'Albums', icon: 'mdi-image-album', route: '/albums' },
-                { title: 'Todos', icon: 'mdi-check', route: '/todos' },
                 { title: 'Comments', icon: 'mdi-comment', route: '/comments' },
+                { title: 'Albums', icon: 'mdi-image-album', route: '/albums' },
+                { title: 'Photos', icon: 'mdi-image', route: '/photos' },
+                { title: 'Todos', icon: 'mdi-check', route: '/todos' },
             ]
         };
     },
